@@ -1,0 +1,14 @@
+{
+    "parser": "babel-eslint",
+    "extends": "eslint:recommended",
+    "rules": {
+        "semi": 2
+    },
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module"
+    },
+    "env": {
+        "browser": true
+    }
+}

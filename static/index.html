@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>2208 ARM7 Assembly Game</title>
+		<link rel="stylesheet" href="main.css" type="text/css">
+		<script type="text/javascript" src="../build/game.js"></script>
+
+		<meta charset="UTF-8">
+	</head>
+
+	<body>
+		<!-- Splash Screen -->
+		<div id="splash_screen_container" align="center">
+			<img src="splashscreen.png" id="splash_screen"></img>
+		</div>
+				
+		<!-- Title Page -->
+		<div id="title_container" align="display" style="display: none">
+			<div class="main_title" align ="center">
+				<h1 >2208 ARM7 Assembly Game</h1>
+				<p id="main_intro">Welcome to the ASM game main page.</p>
+			</div >
+			<div class="container"> 
+			<p>Put some documentation in here</p>
+				<div class="menu" align="center">
+					<div><button class="button" id="choose_challenges">Choose a Challenge</button></div>
+					<div><button class="button" id="choose_help">Help</button></div>
+					<div><button class="button" id="choose_settings">Settings</button></div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Challenges screen -->
+		<div id="challenges_container" align="center" style="display: none"> 
+			<div class="main_title" align ="center">
+				<h1 >2208 ARM7 Assembly Game</h1>
+				<p id="main_intro">Welcome to the ASM challenges page.</p>
+				<button class="button" id="challenge_to_title">Back</button>
+			</div>
+			<div class="grid" id="challenges_grid" align="center">				
+			</div>
+		</div>
+
+		<!-- Help Screen -->
+		<div id="help_container" align="center" style="display: none">
+			<div class="main_title" align ="center">
+				<h1 >2208 ARM7 Assembly Game</h1>
+				<p id="main_intro">Welcome to the ASM help page.</p>
+				<button class="button" id="help_to_title">Back</button>
+			</div>
+			<div class="container">
+				<p>This is some sample text.</p>
+			</div>
+		</div>
+
+		<!-- Settings -->
+		<div id="settings_container"  style="display: none">
+			<div class="main_title" align ="center">
+				<h1 >2208 ARM7 Assembly Game</h1>
+				<p id="main_intro">Welcome to the ASM help page.</p>
+				<button class="button" id="settings_to_title">Back</button>
+			</div>
+			<div class="container">
+				<p>This is some sample text.</p>
+			</div>
+		</div>
+
+		<!-- Game -->
+		<div id="game_container" style="display: none">
+			<div id="game_left">
+				<div class="game_container" id="registers">
+					<table>
+						<tr><td>r0</td><td id="r0">0x00000000</td></tr>
+						<tr><td>r1</td><td id="r1">0x00000000</td></tr>
+						<tr><td>r2</td><td id="r2">0x00000000</td></tr>
+						<tr><td>r3</td><td id="r3">0x00000000</td></tr>
+						<tr><td>r4</td><td id="r4">0x00000000</td></tr>
+						<tr><td>r5</td><td id="r5">0x00000000</td></tr>
+						<tr><td>r6</td><td id="r6">0x00000000</td></tr>
+						<tr><td>r7</td><td id="r7">0x00000000</td></tr>
+						<tr><td>r8</td><td id="r8">0x00000000</td></tr>
+						<tr><td>r9</td><td id="r9">0x00000000</td></tr>
+						<tr><td>r10</td><td id="r10">0x00000000</td></tr>
+						<tr><td>r11</td><td id="r11">0x00000000</td></tr>
+						<tr><td>r12</td><td id="r12">0x00000000</td></tr>
+						<tr><td>r13(SP)</td><td id="r13">0x00000000</td></tr>
+						<tr><td>r14(LR)</td><td id="r14">0x00000000</td></tr>
+						<tr><td>r15(PC)</td><td id="r15">0x00000000</td></tr>
+						<tr><td>N(egative)</td><td id="n_flag">0x00000000</td></tr>
+						<tr><td>Z(ero)</td><td id="z_flag">0x00000000</td></tr>
+						<tr><td>C(arry)</td><td id="c_flag">0x00000000</td></tr>
+						<tr><td>(o)V(erflow)</td><td id="V_flag">0x00000000</td></tr>
+					</table>	
+				</div>
+				<div class="game_container" id="memory_map">
+					<label>Go to: 0x</lable>
+					<input id="memory_location" type="text">
+					<button class="button" id="goto_memory">Go</button>
+					<textarea id="memory_text" draggable="false" readonly="true"></textarea>
+				</div>
+			</div>
+			<div id="game_right">
+				<div class="game_container" id="controls">
+					<button class="button" id="run_program">Run</button>
+					<button class="button" id="halt_program">Halt</button>
+					<button class="button" id="asm_program">Assemble</button>
+					<button class="button" id="step_program">Step</button>
+					<button class="button" id="cont_program">Continue</button>
+					<button class="button" id="until_program">Until</button>
+					<button class="button" id="game_to_challenges">Go Back</button>
+				</div>
+				<div class="game_container" id="io">
+					<textarea id="io_text" draggable="false" readonly="true"></textarea>
+				</div>
+			</div>
+			<div id="game_center">
+				<div class="game_container" id="disassembly">
+					<textarea id="disasm_text" readonly="true"></textarea>
+				</div>
+				<div class="game_container" id="code">
+					<textarea id="code_text"></textarea>
+				</div>
+				<div class="game_container" id="output">
+					<textarea id="output_text" readonly="true"></textarea>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

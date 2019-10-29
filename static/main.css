@@ -1,0 +1,140 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	color: white;
+	font-family: "Lucida Console", Monaco, monospace;
+	background-color: #222222;
+}
+
+textarea {
+	width: 100%;
+	min-height: 200px;
+	height: 100%;
+	color: white;
+	font-size: 12px;
+	font-family: "Lucida Console", Monaco, monospace;
+	background-color: #222222;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+  	-webkit-box-sizing: border-box;
+}
+
+input {
+	color: white;
+	font-family: "Lucida Console", Monaco, monospace;
+	background-color: #222222;
+}
+
+#splash_screen_container {
+    -webkit-animation: fadeinout 5s linear forwards;
+    animation: fadeinout 5s linear forwards;
+}
+
+#splash_screen {
+	max-height: 100%;
+	max-width: 100%;
+}
+
+@-webkit-keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@keyframes fadeinout {
+  0%,100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.main_title {
+	position: relative;
+	margin: auto;
+	width: 85%;
+	border: 2px solid white;
+	border-radius: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.container {
+	position: relative;
+	margin: auto;
+	width: 85%;
+	border: 2px solid white;
+	border-radius: 5px;
+}
+
+.button {
+	background-color: #222222;
+	border: 2;
+	border-radius: 5px;
+	border-color: white;
+	padding: 5px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	margin-left: 10px;
+	margin-top: 10px;
+	display: inline-block;
+	text-align: center;
+	color: white;
+	font-size: 26px;
+}
+
+.menu {
+	position: relative;
+}
+
+.grid {
+	display: flex;
+	flex-wrap: wrap; /* Necessary to avoid screen overflow */
+	min-width: 200px;
+	max-width: 90%;
+}
+
+.challenge {
+	min-width: 200px;
+	min-height: 200px;
+	max-width: 250px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	margin-left: 10px;
+	margin-top: 10px;
+	border: 2px solid white;
+	border-radius: 5px;
+
+	flex: 1;
+}
+
+.game_container {
+	position: relative;
+	margin: auto;
+	width: 97.5%;
+	height: 100%;
+	border: 2px solid white;
+	border-radius: 5px;
+	margin-top: 5px;
+}
+
+#game_center {
+	position: relative;
+	margin: auto;
+	float: none;
+	width: 60%;
+	min-height: 500;
+	height: 100%;
+}
+
+#game_left {
+	position: relative;
+	margin: auto;
+	float: left;
+	width: 20%;
+}
+
+#game_right {
+	position: relative;
+	margin: auto;
+	float: right;
+	width: 20%;
+}

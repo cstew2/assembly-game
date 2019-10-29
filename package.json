@@ -1,0 +1,29 @@
+{
+    "name": "assembly-game",
+    "version": "0.0.1",
+    "license": "UNLICENSED",
+    "repository": "github:cstew2/assembly-game",
+    "devDependencies": {
+	"@babel/core": "*",
+	"@babel/cli": "*",
+	"@babel/eslint": "*",
+	"@babel/loader": "*",
+	"@babel/preset-env": "*",
+	"eslint": "*",
+	"http-server": "*",
+	"jshint": "*",
+	"npm-run-all": "*",
+	"webpack": "*"
+    },
+    "scripts": {
+	"build": "run-s transpile package serve",
+	"transpile": "babel ./game -d ./comp",
+	"lint": "eslint ./game/**/*.js",
+	"package": "webpack --config webpack.config.js",
+	"serve": "http-server -c 1 -a localhost"
+    }
+    "babel": {
+	"presets": ["@babel/preset-es2015"],
+	"plugins": []
+    }
+}

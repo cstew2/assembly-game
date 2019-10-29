@@ -1,0 +1,117 @@
+{
+	"challenge_count": 9,
+
+	"challenges": [
+		{
+			"name": "Hello World",
+			"description": "The very first program you should write.",
+
+			"inputs": [null],
+			"outputs": ["Hello, World!"],
+			
+			"instruction_limit": 10,
+			"memory_limit": 512,
+			"registers allowed": [null]
+		},
+		{
+			"name": "",
+			"description": "",
+
+			"inputs": [null],
+			"outputs": [null],
+			
+			"instruction_limit": 0,
+			"memory_limit": 0,
+			"registers allowed": [null]
+		},
+		{
+			"name": "",
+			"description": "",
+
+			"inputs": [null],
+			"outputs": [null],
+			
+			"instruction_limit": 0,
+			"memory_limit": 0,
+			"registers allowed": [null]
+		},
+		{
+			"name": "",
+			"description": "",
+
+			"inputs": [null],
+			"outputs": [null],
+			
+			"instruction_limit": 0,
+			"memory_limit": 0,
+			"registers allowed": [null]
+		},
+		{
+			"name": "",
+			"description": "",
+
+			"inputs": [null],
+			"outputs": [null],
+			
+			"instruction_limit": 0,
+			"memory_limit": 0,
+			"registers allowed": [null]
+		},
+		{
+			"name": "",
+			"description": "",
+
+			"inputs": [null],
+			"outputs": [null],
+			
+			"instruction_limit": 0,
+			"memory_limit": 0,
+			"registers allowed": [null]
+		},
+		{
+			"name": "",
+			"description": "",
+
+			"inputs": [null],
+			"outputs": [null],
+			
+			"instruction_limit": 0,
+			"memory_limit": 0,
+			"registers allowed": [null]
+		},
+		{
+			"name": "",
+			"description": "",
+
+			"inputs": [null],
+			"outputs": [null],
+			
+			"instruction_limit": 0,
+			"memory_limit": 0,
+			"registers allowed": [null]
+		},
+		{
+			"name": "",
+			"description": "",
+
+			"inputs": [null],
+			"outputs": [null],
+			
+			"instruction_limit": 0,
+			"memory_limit": 0,
+			"registers allowed": [null]
+		},
+		{
+			"name": "",
+			"description": "",
+
+			"inputs": [null],
+			"outputs": [null],
+			
+			"instruction_limit": 0,
+			"memory_limit": 0,
+			"registers allowed": [null]
+		}
+
+	]
+}

@@ -1,0 +1,52 @@
+<html>
+
+	<head>
+	<title>ChallengeGen</title>
+		<link rel="stylesheet" href="challengegen.css" type="text/css">
+		<script type="text/javascript" src="test.js"></script>
+		<script type="application/json" src="challenges.json"></script>
+	</head>
+
+	<body>
+		<div id="main_container">
+		<div class="main_title"><h1 align="center">ChallengeGen</h1></div>
+			<div id="new_challenge" class="container">
+				<h3>New Challenge</h3>
+					<table>
+						<tr>
+							<td>Name:</td>
+							<td><textarea id="name"></textarea></td>
+						</tr>
+						<tr>
+							<td>Description:</td>
+							<td><textarea id="description"></textarea></td>
+						</tr>
+						<tr>
+							<td>Inputs:</td>
+							<td><textarea id="inputs"></textarea></td>
+						</tr>
+						<tr>
+							<td>Outputs:</td>
+							<td><textarea id="outputs"></textarea></td>
+						</tr>
+						<tr>
+							<td>Instruction Limit:</td>
+							<td><textarea id="instruction_limit"></textarea></td>
+						</tr>
+						<tr>
+							<td>Memory Limit:</td>
+							<td><textarea id="memory_limit"></textarea></td>
+						</tr>
+						<tr>
+							<td>Registers Disllowed:</td>
+							<td><textarea id="registers_disallowed"></textarea></td>
+					</table>
+					<button id="save" class="button">Add</button><br>
+			</div>
+			<div class="container" id="challenge_list">
+				
+			</div>
+		</div>
+	</body>	
+
+</html>

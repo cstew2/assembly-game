@@ -1,0 +1,55 @@
+body {
+	color: white;
+	font-family: "Lucida Console", Monaco, monospace;
+	background-color: #222222;
+}
+
+textarea {
+	border: 1px;
+
+}
+
+.main_title {
+	position: relative;
+	margin: auto;
+	width: 85%;
+	border: 2px solid white;
+	border-radius: 5px;
+	padding: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.container {
+	position: relative;
+	margin: auto;
+	width: 85%;
+	border: 2px solid white;
+	border-radius: 5px;
+	padding: 10px;
+}
+
+.button {
+	background-color: #222222;
+	border: 2;
+	border-radius: 5px;
+	border-color: white;
+	padding: 5px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	margin-left: 10px;
+	margin-top: 10px;
+	display: inline-block;
+	text-align: center;
+	color: white;
+	font-size: 26px;
+}
+
+.challenge {
+	width: 85%;
+	border: 2px solid white;
+	border-radius: 5px;
+	padding: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
