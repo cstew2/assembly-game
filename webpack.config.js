@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
-    entry: './game/main.js',
+    entry: './build/comp/main.js',
     output: {
         path: path.resolve(__dirname, './build'),
         filename: 'game.js',
