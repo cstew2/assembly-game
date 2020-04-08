@@ -33,9 +33,10 @@ class lexer{
         this.is_special = this.is_special.bind(this);
         this.is_alpha = this.is_alpha.bind(this);
         this.is_name = this.is_name.bind(this);
-        this.is_hex_literal = this.is_hex_literal.bind(this);
-        this.is_oct_literal = this.is_oct_literal.bind(this);
-        this.is_bin_literal = this.is_bin_literal.bind(this);
+	this.is_bin_literal = this.is_bin_literal.bind(this);
+	this.is_oct_literal = this.is_oct_literal.bind(this);
+	this.is_dec_literal = this.is_dec_literal.bind(this);
+        this.is_hex_literal = this.is_hex_literal.bind(this); 
         this.is_whitespace = this.is_whitespace.bind(this);
         this.print_tokens = this.print_tokens.bind(this);
 
@@ -61,10 +62,10 @@ class lexer{
                     else {
                         this.add_buffer_token(this.is_oct_literal);
                         this.add_buffer_token(TOKEN_TYPES.OCTAL_LITERAL);
-                        }
                     }
+                }
                 //no prefix but starts with a digit
-                if(this.is_digit(this.c)) {
+                if(this.is_dec_literal(this.c)) {
                     //fill the buffer with any kind of number
                     this.add_buffer_token(this.is_hex_literal);
                     //binary literal
@@ -88,7 +89,6 @@ class lexer{
                         this.add_buffer_token(TOKEN_TYPES.DECIMAL_LITERAL)
                     }
                 }
-
             }
 
             //strings
@@ -107,28 +107,30 @@ class lexer{
                 let dir = this.is_directive();
                 let op = this.is_opcode();
                 let reg = this.is_register();
-                if(dir) {
-                    this.add_token(dir);
+                if(dir != "") {
+                    this.add_token(TOKEN_TYPES.DIRECTIVE, dir);
                 }
                 //check for opcodes
-                else if(op) {
-                    this.add_token(op)
+                else if(op != "") {
+                    this.add_token(TOKEN_TYPES.OPCODE, op)
                 }
                 //check for registers
-                else if(reg) {
-                    this.add_token(reg);
+                else if(reg != "") {
+                    this.add_token(TOKEN_TYPES.REGISTER, reg);
                 }
                 //must be a label
                 else {
-                    this.add_buffer_token(TOKEN_TYPES.label);
+                    this.add_buffer_token(TOKEN_TYPES.LABEL);
                 }
             }
 
             //special symbols
             else if(this.is_special(this.c)) {
                 for(let i=0; i < this.special_chars.length; i++) {
-                    if(this.c === this.special_chars[i][0])
+                    if(this.c === this.special_chars[i][0]) {
                         this.add_token(this.special_chars[i][1]);
+			this.next();
+		    }
                 }
             }
 
@@ -146,7 +148,7 @@ class lexer{
 
             else {
                 //error
-            }
+	    }
 
         }
     }
@@ -215,31 +217,36 @@ class lexer{
     }
 
     is_special() {
-        return (this.c === '!' || this.c === '{' || this.c === '}' || this.c === '[' || this.c === ']');
+        return (this.c === '!' || this.c === '{' || this.c === '}' ||
+		this.c === '[' || this.c === ']' || this.c === ',');
     }
 
     is_alpha() {
     	return (this.c >= 'A' && this.c <= 'Z'); 
     }    
-
+    
     is_name() {
-    	return (this.is_alpha(this.c) || this.c === '_');
-    }
-
-    is_hex_literal() {
-    	return (this.c >= '0' && this.c <= '9') || (this.c >= 'A' && this.c <= 'F');
-    }
-
-    is_oct_literal() {
-        return (this.c >= '0' && this.c <= '7');
+    	return (this.is_alpha(this.c) || this.c === '_' || this.is_dec_literal(this.c));
     }
 
     is_bin_literal() {
-        return (this.c === '1' || this.c === '0');
+        return (this.c === '1' || this.c === '0' || this.c === '-');
+    }
+    
+    is_dec_literal() {
+        return (this.c >= '0' && this.c <= '9' || this.c === '-');
     }
 
+    is_oct_literal() {
+        return (this.c >= '0' && this.c <= '7' || this.c === '-');
+    }
+    
+    is_hex_literal() {
+    	return (this.c >= '0' && this.c <= '9') || (this.c >= 'A' && this.c <= 'F' || this.c === '-');
+    }
+    
     is_whitespace() {
-        return (this.c === ' ' || this.c === '\n')
+        return (this.c === ' ' || this.c === '\n' || this.c === '\t')
     }
 
     print_tokens() {
